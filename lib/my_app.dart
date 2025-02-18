@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:navigator_learn/home.dart';
 import 'package:navigator_learn/routes/app_routes.dart';
 
 class MyApp extends StatelessWidget {
@@ -10,14 +9,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp.router(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        // This is the theme of your application.
-        
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      routerDelegate: AppRoutes().goRouter.routerDelegate,
-      routeInformationParser: AppRoutes().goRouter.routeInformationParser,
+      routerConfig: AppRoutes().goRouter,
+      
       //home: const MyHomePage(title: 'Flutter Demo Home Page'),
     );
   }
